@@ -1,5 +1,5 @@
 # udev-bridge-controller-trim
-This is a tried and true list of bridge controllers with TRIM support.
+This is a tried and true list of bridge controllers with [TRIM](https://www.seagate.com/gb/en/blog/what-are-ssd-trim-and-garbage-collection/) support, made available as a udev rule file.
 
 ## 💻 Usage
 First, check whether TRIM is already available for your storage device:
@@ -25,7 +25,7 @@ $ lsusb
 Bus 002 Device 004: ID 174c:1153 ASMedia Technology Inc. ASM1153 SATA 3Gb/s bridge
 ```
 
-Check `10-bridge-controller-trim.rules` for the ID. If present, copy the file to `/etc/udev/rules.d/` and reboot.
+Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for the ID. If present, copy the file to `/etc/udev/rules.d/` and reboot.
 
 > [!NOTE]
 > For LUKS encrypted drives, you must also enable discard at the dm-crypt layer as follows:  
