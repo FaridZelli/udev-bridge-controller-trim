@@ -1,0 +1,11 @@
+# ASUSTek Computer, Inc. TUF Gaming A1
+ACTION=="add|change", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1a8a", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
+
+# ASUSTek Computer, Inc. TUF Gaming A2
+ACTION=="add|change", ATTRS{idVendor}=="0b05", ATTRS{idProduct}=="1b9f", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
+
+# ASMedia ASM1153
+ACTION=="add|change", ATTRS{idVendor}=="174c", ATTRS{idProduct}=="1153", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
+
+# ASMedia ASM235CM
+ACTION=="add|change", ATTRS{idVendor}=="174c", ATTRS{idProduct}=="235c", SUBSYSTEM=="scsi_disk", ATTR{provisioning_mode}="unmap"
