@@ -32,8 +32,8 @@ Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for th
 > `echo unmap | sudo tee /sys/block/sdX/device/scsi_disk/*/provisioning_mode`
 
 > [!NOTE]
-> For LUKS encrypted drives, you must also enable discard at the dm-crypt layer as follows:  
-> `cryptsetup --allow-discards --persistent refresh <mapping_name>`
+> For LUKS encrypted drives, you must also enable discard at the dm-crypt layer:  
+> `cryptsetup --allow-discards --persistent refresh luks-*`
 >   
 > Or alternatively, add the `discard` flag in `/etc/crypttab` and regenerate your initramfs.  
 > This can also be done using a GUI partition manager such as **GNOME Disks**.  
