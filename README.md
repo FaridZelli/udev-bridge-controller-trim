@@ -33,7 +33,7 @@ Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for th
 > Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
 > `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
 > 
-> This method stores the flag in the LUKS2 header and works across different hosts.
+> This method stores the flag in the drive's LUKS2 header and works across different hosts.
  
 > Alternatively, add the `discard` option in your `/etc/crypttab` file and rebuild the initramfs.  
 > This can also be done using a GUI partition manager such as **GNOME Disks**.
