@@ -27,6 +27,8 @@ Bus 002 Device 004: ID 174c:1153 ASMedia Technology Inc. ASM1153 SATA 3Gb/s brid
 
 Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for the ID. If present, copy the file to `/etc/udev/rules.d/` and reboot.
 
+Afterwards, confirm that TRIM is now available by repeating the steps above.
+
 > [!IMPORTANT]
 > For LUKS2 encrypted drives, you must also enable discard at the dm-crypt layer.
 > 
