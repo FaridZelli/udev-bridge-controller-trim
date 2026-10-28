@@ -28,14 +28,15 @@ Bus 002 Device 004: ID 174c:1153 ASMedia Technology Inc. ASM1153 SATA 3Gb/s brid
 Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for the ID. If present, copy the file to `/etc/udev/rules.d/` and reboot.
 
 > [!IMPORTANT]
-> For LUKS2 encrypted drives, you must also enable discard at the dm-crypt layer.  
-> - Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
->   `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
+> For LUKS2 encrypted drives, you must also enable discard at the dm-crypt layer.
+> 
+> Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
+> `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
 > 
 > This method stores the flag in the LUKS2 header and works across different hosts.
-> 
-> > Alternatively, add the `discard` flag in your `/etc/crypttab` file and rebuild the initramfs.  
-> > This can also be done using a GUI partition manager such as **GNOME Disks**.
+ 
+> Alternatively, add the `discard` option in your `/etc/crypttab` file and rebuild the initramfs.  
+> This can also be done using a GUI partition manager such as **GNOME Disks**.
 
 > [!NOTE]
 > Some Asus (Realtek) M.2 enclosures may require `unmap` to be forced manually:  
