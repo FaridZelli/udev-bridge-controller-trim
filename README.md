@@ -32,10 +32,13 @@ Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for th
 > 
 > Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
 > `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
+>
+> If the root partition fails to update correctly, regenerate the initramfs. Example for Fedora:  
+> `dracut --regenerate-all --force`
 > 
 > This method stores the flag in the drive's LUKS2 header and works across different hosts.
  
-> Alternatively, add the `discard` option in your `/etc/crypttab` file and rebuild the initramfs.  
+> Alternatively, add the `discard` option in your `/etc/crypttab` file.  
 > This can also be done using a GUI partition manager such as **GNOME Disks**.
 
 > [!NOTE]
