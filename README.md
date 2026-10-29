@@ -29,6 +29,8 @@ Check [10-bridge-controller-trim.rules](/10-bridge-controller-trim.rules) for th
 
 Afterwards, confirm that TRIM is now available by repeating the steps above.
 
+## 🔐 Encryption
+
 > [!IMPORTANT]
 > For LUKS2 encrypted drives, you must also enable discard at the dm-crypt layer.
 > 
@@ -40,8 +42,10 @@ Afterwards, confirm that TRIM is now available by repeating the steps above.
 > 
 > This method stores the flag in the drive's LUKS2 header and works across different hosts.
  
-> Alternatively, add the `discard` option in your `/etc/crypttab` file.  
-> This can also be done using a GUI partition manager such as **GNOME Disks**.
+Alternatively, add the `discard` option in your `/etc/crypttab` file.  
+This can also be done using a GUI partition manager such as **GNOME Disks**.
+
+## 🔍 Vendor-specific quirks
 
 > [!NOTE]
 > Some Asus (Realtek) M.2 enclosures may require `unmap` to be forced manually:  
