@@ -38,16 +38,16 @@ Afterwards, confirm that TRIM is now available with `lsblk --discard` again.
 > 
 > Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
 > `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
->
+> 
 > If your root partition fails to update correctly, regenerate the `initramfs`.
 > 
 > > Example for Dracut distributions (Fedora, openSUSE, Ubuntu):  
 > > `dracut --regenerate-all --force`
 > 
-> This method stores the flag in the drive's LUKS2 header and works across different hosts.
+> This method permanently stores the flag in the drive's LUKS2 header.
  
-Alternatively, add the `discard` option in your `/etc/crypttab` file.  
-This can also be done using a GUI partition manager such as **GNOME Disks**.
+Alternatively, add the `discard` option in your `/etc/crypttab` file and regenerate the `initramfs`.  
+Unlike the method described above, this will only affect the current host.
 
 ## 🔍 Vendor-specific quirks
 
