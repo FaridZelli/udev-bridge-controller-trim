@@ -37,7 +37,7 @@ Afterwards, confirm that TRIM is now available by repeating the steps above.
 > Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
 > `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
 >
-> If the root partition fails to update correctly, regenerate the initramfs. Example for Fedora:  
+> If your root partition fails to update correctly, regenerate the initramfs. Example for Fedora:  
 > `dracut --regenerate-all --force`
 > 
 > This method stores the flag in the drive's LUKS2 header and works across different hosts.
