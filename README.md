@@ -13,12 +13,12 @@ sdb                                                  0        0B       0B       
 └─sdb1                                               0        0B       0B         0
 zram0                                                0        4K       2T         0
 ```
-- If your device has non-zero values (such as `sda` in the example above), try running TRIM with the `fstrim` utility as root.
+- If your device has non-zero values (see `sda` above), try running TRIM with the `fstrim` utility as root.
 ```
 $ fstrim -v /mnt/drive_mount_point
 ```
 
-- If not, find your enclosure's bridge controller ID using `lsusb`.
+- If your device has zero values (see `sdb` above), find your enclosure's bridge controller ID using `lsusb`.
 ```
 $ lsusb
 
