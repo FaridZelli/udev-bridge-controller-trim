@@ -13,7 +13,7 @@ sdb                                                  0        0B       0B       
 └─sdb1                                               0        0B       0B         0
 zram0                                                0        4K       2T         0
 ```
-- If your device has non-zero values (such as `sda` in the example), try running TRIM with the `fstrim` utility as root.
+- If your device has non-zero values (such as `sda` in the example above), try running TRIM with the `fstrim` utility as root.
 ```
 $ fstrim -v /mnt/drive_mount_point
 ```
