@@ -13,12 +13,12 @@ sdb                                                  0        0B       0B       
 └─sdb1                                               0        0B       0B         0
 zram0                                                0        4K       2T         0
 ```
-- If your device has non-zero values (see `sda` above), try running TRIM with the `fstrim` utility as root.
+If your device has non-zero values (see `sda` above), try running TRIM with the `fstrim` utility as root.
 ```
 $ fstrim -v /mnt/drive_mount_point
 ```
 
-- If your device has zero values (see `sdb` above), find your enclosure's bridge controller ID using `lsusb`.
+If your device has zero values (see `sdb` above), find your enclosure's bridge controller ID using `lsusb`.
 ```
 $ lsusb
 
@@ -37,8 +37,10 @@ Afterwards, confirm that TRIM is now available by repeating the steps above.
 > Find the mapper name using `lsblk`, then set the --allow-discards flag using:  
 > `cryptsetup --allow-discards --persistent refresh luks-<UUID>`
 >
-> If your root partition fails to update correctly, regenerate the `initramfs`. Example for Fedora:  
-> `dracut --regenerate-all --force`
+> If your root partition fails to update correctly, regenerate the `initramfs`.
+> 
+> > Example for Dracut distributions (Fedora, openSUSE, Ubuntu):  
+> > `dracut --regenerate-all --force`
 > 
 > This method stores the flag in the drive's LUKS2 header and works across different hosts.
  
